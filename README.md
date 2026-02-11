@@ -1,55 +1,57 @@
-# Kanban Board – TypeScript نقي
+# Kanban Board – Pure TypeScript
 
-لوحة Kanban لإدارة المهام مكتوبة بـ **TypeScript نقي** بدون React أو Vite أو أي Bundler.
+A Kanban task board built with **pure TypeScript** — no React, Vite, or any bundler.
 
-## المميزات
+## Features
 
-- TypeScript فقط → تحويل بـ `tsc` → JavaScript في المتصفح
-- حفظ تلقائي في `localStorage`
-- واجهة حديثة (Tailwind CSS)
-- متجاوب مع الشاشات
-- إضافة، تعديل، حذف، ونقل المهام بين الأعمدة (To Do / In Progress / Completed)
+- TypeScript only → compile with `tsc` → JavaScript in the browser
+- No frameworks (no React, no Vue)
+- No Vite or Webpack
+- Auto-save to `localStorage`
+- Modern UI (Tailwind CSS)
+- Responsive layout
+- Add, edit, delete, and move tasks across columns (To Do / In Progress / Completed)
 
-## التشغيل
+## Getting Started
 
-### 1. تثبيت TypeScript
+### 1. Install TypeScript
 
 ```bash
 npm install -g typescript
 ```
 
-أو محلياً:
+Or locally:
 
 ```bash
 npm install --save-dev typescript
 ```
 
-### 2. تحويل TypeScript إلى JavaScript
+### 2. Compile TypeScript to JavaScript
 
 ```bash
 tsc
 ```
 
-يتم إنشاء `dist/app.js` من `src/app.ts`.
+This generates `dist/app.js` from `src/app.ts`.
 
-### 3. فتح المشروع
+### 3. Run the Project
 
-- افتح `index.html` في المتصفح، أو
-- شغّل سيرفر محلي ثم افتح الصفحة:
+- Open `index.html` in your browser, or
+- Use a local server:
 
 ```bash
 npx http-server -p 8000
 ```
 
-ثم: `http://localhost:8000`
+Then open: `http://localhost:8000`
 
-أو مع Python:
+Or with Python:
 
 ```bash
 python -m http.server 8000
 ```
 
-## هيكل المشروع
+## Project Structure
 
 ```
 kanban-ts-main/
@@ -63,37 +65,37 @@ kanban-ts-main/
 └── README.md
 ```
 
-## إعدادات tsconfig.json
+## tsconfig.json Overview
 
-- `outDir: "./dist"` → مخرجات الـ JS في `dist`
-- `rootDir: "./src"` → المصدر من `src`
-- `target: "ES2020"` و `module: "ES2020"`
+- `outDir: "./dist"` → compiled JS goes to `dist`
+- `rootDir: "./src"` → source files in `src`
+- `target: "ES2020"` and `module: "ES2020"`
 
-## طريقة العمل
+## How It Works
 
-1. تعديل الكود في `src/app.ts`
-2. تشغيل: `tsc`
-3. الصفحة تربط السكربت: `<script src="dist/app.js"></script>`
+1. Edit code in `src/app.ts`
+2. Run: `tsc`
+3. The page loads the script: `<script src="dist/app.js"></script>`
 
-## الاستخدام
+## Usage
 
-| الإجراء | الطريقة |
-|--------|---------|
-| إضافة مهمة | زر **+** في الهيدر |
-| نقل المهمة | أزرار To Do / Start / Complete في البطاقة |
-| تعديل | أيقونة القلم على البطاقة |
-| حذف | أيقونة سلة المهملات على البطاقة |
+| Action        | How to do it                                      |
+|---------------|---------------------------------------------------|
+| Add task      | Click the **+** button in the header              |
+| Move task     | Use To Do / Start / Complete buttons on the card |
+| Edit task     | Click the pencil icon on the card                 |
+| Delete task   | Click the trash icon on the card                  |
 
-## أوامر مفيدة
+## Useful Commands
 
 ```bash
-tsc              # تحويل مرة واحدة
-tsc --watch      # تحويل تلقائي عند التعديل
+tsc              # compile once
+tsc --watch      # compile on file changes
 ```
 
-## التبعيات
+## Dependencies
 
-لا توجد تبعيات في وقت التشغيل؛ فقط TypeScript مطلوب للتحويل (`tsc`).
+No runtime dependencies — only TypeScript is needed for compilation (`tsc`).
 
 ## 👨‍💻 Author
 
